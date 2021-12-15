@@ -31,3 +31,9 @@ steps:
     searchFolder: '$(System.DefaultWorkingDirectory)'
     runTestsInIsolation: true
     codeCoverageEnabled: true
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: test
+    projects: '**/*HelloWorldTest/*.csproj'
+    arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
