@@ -17,10 +17,11 @@ steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
 
-#- task: VSTest@2
-#  inputs:
-#    testSelector: 'testRun'
-#    searchFolder: '$(System.DefaultWorkingDirectory)'
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
+
+- task: VSTest@2
+  inputs:
+    testSelector: 'testRun'
+    searchFolder: '$(System.DefaultWorkingDirectory)'
