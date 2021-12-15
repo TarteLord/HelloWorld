@@ -20,8 +20,15 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-
 - task: VSTest@2
   inputs:
-    testSelector: 'TestOutputIsHelloWorld'
+    testSelector: 'testAssemblies'
+    testAssemblyVer2: |
+      **\bin\$(BuildConfiguration)\**\*test*.dll
+      !**\obj\**
+      !**\ref\**
+      !**\xunit.runner.visualstudio.testadapter.dll
+      !**\xunit.runner.visualstudio.dotnetcore.testadapter.dll
     searchFolder: '$(System.DefaultWorkingDirectory)'
+    runTestsInIsolation: true
+    codeCoverageEnabled: true
