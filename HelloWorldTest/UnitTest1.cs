@@ -6,7 +6,7 @@ namespace HelloWorldTest
 {
     public class UnitTest1
     {
-        private const string Expected = "Hello World!123";
+        private const string Expected = "Hello World!";
 
         [Fact]
         public void TestOutputIsHelloWorld()
