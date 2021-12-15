@@ -7,7 +7,6 @@ namespace HelloWorld
         static void Main(string[] args)
         {
             HelloWorld();
-            asdasdasd
         }
 
         public static void HelloWorld()
