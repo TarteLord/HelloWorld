@@ -23,5 +23,5 @@ steps:
 
 - task: VSTest@2
   inputs:
-    testSelector: 'testRun'
+    testSelector: 'TestOutputIsHelloWorld'
     searchFolder: '$(System.DefaultWorkingDirectory)'
